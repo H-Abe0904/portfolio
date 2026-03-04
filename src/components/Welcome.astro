@@ -6,10 +6,29 @@ import background from "../assets/background.svg";
 <div id="container">
 	<title>Welcome to Astro</title>
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<h1>Welcome to Astro! 🚀</h1>
+	<header>
+		<div class="title-name">
+			<h1>Welcome to Astro! 🚀</h1>
+		</div>
+
+		<nav class="pages">
+			<ul>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/page-2">Page 2</a>
+				</li>
+				<li>
+					<a href="/page-3">Page 3</a>
+				</li>
+				<li>
+					<a href="/page-4">Page 4</a>
+				</li>
+			</ul>
+		</nav>
 		<section id="hero"></section>
-	</main>
+	</header>
 </div>
 
 <style>
@@ -30,10 +49,41 @@ import background from "../assets/background.svg";
 		height: 100%;
 	}
 
+	title {
+		display: none;
+	}
+
+	header {
+		display: flex; /* 子要素を横並びに */
+		justify-content: space-between; /* 子要素を両端に配置 */
+		align-items: center; /* 垂直方向中央揃え */
+		padding: 10px 20px;
+		background-color: #f1f1f1;
+	}
+
+	.header-nav li {
+		display: inline-block; /* ナビのリンクを横並びに */
+		list-style: none; /* デフォルトのリストスタイルを削除 */
+		text-align: right;
+		gap: 20px; /* メニュー間の間隔 */
+	}
+
+
+	.header-nav a {
+		text-decoration: none;
+		color: #333;
+		display: inline-block;
+		align-items: left;
+		gap: 8px
+	}
+
 	main {
 		height: 100%;
 		display: flex;
-		justify-content: center;
+		justify-content: left;
+		align-items: left;
+		text-align: left;
+		padding: 216px;
 	}
 
 	#hero {
