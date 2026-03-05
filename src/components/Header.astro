@@ -9,24 +9,17 @@ import background from "../assets/background.svg";
 	<header>
 		<div class="title-name">
 			<h1>Welcome to Astro! 🚀</h1>
+
+			<nav class="pages">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/page-2">Page 2</a></li>
+					<li><a href="/page-3">Page 3</a></li>
+					<li><a href="/page-4">Page 4</a></li>
+				</ul>
+			</nav>
 		</div>
 
-		<nav class="pages">
-			<ul>
-				<li>
-					<a href="/">Home</a>
-				</li>
-				<li>
-					<a href="/page-2">Page 2</a>
-				</li>
-				<li>
-					<a href="/page-3">Page 3</a>
-				</li>
-				<li>
-					<a href="/page-4">Page 4</a>
-				</li>
-			</ul>
-		</nav>
 		<section id="hero"></section>
 	</header>
 </div>
@@ -54,29 +47,33 @@ import background from "../assets/background.svg";
 	}
 
 	header {
-		display: flex; /* 子要素を横並びに */
-		justify-content: space-between; /* 子要素を両端に配置 */
-		align-items: center; /* 垂直方向中央揃え */
-		padding: 10px 20px;
-		background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between; /* これでタイトルとナビが両端に分かれます */
+    align-items: center;
+    padding: 10px 0 10px 20px; /* 右側のパディングを 0 に調整 */
+    background-color: #f1f1f1;
+}
+
+	/* クラス名を .pages に修正し、ul に対して flex を適用 */
+	.pages ul {
+		display: flex; /* 子要素(li)を横並びにする */
+		list-style: none; /* 黒丸を消す */
+		margin: 0;
+		padding: 0;
+		gap: 20px; /* メニュー間の間隔を作る */
 	}
 
-	.header-nav li {
-		display: inline-block; /* ナビのリンクを横並びに */
-		list-style: none; /* デフォルトのリストスタイルを削除 */
-		text-align: right;
-		gap: 20px; /* メニュー間の間隔 */
+	/* 各リスト項目の設定 */
+	.pages li {
+		display: ;
 	}
 
-
-	.header-nav a {
+	/* リンクのデザイン */
+	.pages a {
 		text-decoration: none;
 		color: #333;
-		display: inline-block;
-		align-items: left;
-		gap: 8px
+		font-weight: 500;
 	}
-
 	main {
 		height: 100%;
 		display: flex;
