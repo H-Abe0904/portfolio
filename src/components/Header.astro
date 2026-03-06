@@ -1,10 +1,11 @@
 ---
 import astroLogo from "../assets/astro.svg";
-
 ---
 
+<!-- ナビゲーションバー部分 -->
 <div class="navbar bg-base-100 shadow-sm">
 	<div class="navbar-start">
+		<!-- ドロップダウンメニュー部分 -->
 		<div class="dropdown">
 			<div tabindex="0" role="button" class="btn btn-ghost btn-circle">
 				<svg
@@ -14,6 +15,7 @@ import astroLogo from "../assets/astro.svg";
 					viewBox="0 0 24 24"
 					stroke="currentColor"
 				>
+				<!-- ドロップダウンアイコン部分 -->
 					<path
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -21,6 +23,7 @@ import astroLogo from "../assets/astro.svg";
 						d="M4 6h16M4 12h16M4 18h7"></path>
 				</svg>
 			</div>
+			<!-- ドロップダウンメニューのコンテンツ部分 -->
 			<ul
 				tabindex="-1"
 				class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
@@ -32,9 +35,10 @@ import astroLogo from "../assets/astro.svg";
 		</div>
 	</div>
 
+	<!-- タイトル部分 -->
 	<div class="navbar-center">
-		<a class="btn btn-ghost text-xl">Lusteria</a>
+		<!-- タイトルとボタン -->
+		<a href="/" class="btn btn-ghost text-xl">Lusteria</a>
 	</div>
 	<div class="navbar-end"></div>
 </div>
-
