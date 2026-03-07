@@ -1,13 +1,19 @@
 ---
-import astroLogo from "../assets/astro.svg";
+import Logo from "../assets/Lusteria.svg";
 ---
 
 <!-- ナビゲーションバー部分 -->
 <div class="navbar bg-base-100 shadow-sm">
 	<div class="navbar-start">
 		<!-- ドロップダウンメニュー部分 -->
-		<div class="dropdown">
-			<div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+		<div class="dropdown">	
+			<div
+				tabindex="0"
+				role="button"
+				class="btn btn-ghost btn-circle"
+				aria-label="Menu"
+			>
+			
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-5 w-5"
@@ -15,7 +21,7 @@ import astroLogo from "../assets/astro.svg";
 					viewBox="0 0 24 24"
 					stroke="currentColor"
 				>
-				<!-- ドロップダウンアイコン部分 -->
+					<!-- ドロップダウンアイコン部分 -->
 					<path
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -36,9 +42,9 @@ import astroLogo from "../assets/astro.svg";
 	</div>
 
 	<!-- タイトル部分 -->
-	<div class="navbar-center">
+	<div class="navbar-center w-50 h-25">
 		<!-- タイトルとボタン -->
-		<a href="/" class="btn btn-ghost text-xl">Lusteria</a>
+		<a href="/" class="btn btn-ghost text-xl" ><img src={Logo.src} alt="Astro Logo" class="w-50 h-20" /></a>
 	</div>
 	<div class="navbar-end"></div>
 </div>
