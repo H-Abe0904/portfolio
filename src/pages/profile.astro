@@ -7,9 +7,72 @@ import Background from "../components/Background.astro";
 <Layout>
     {/* 💡 必ず Layout の「中」に Header を入れる */}
     <Header />
-    <div class="flex flex-col items-center justify-center min-h-screen">
+
+    <div class="flex flex-col items-center justify-center h-50">
+        <h1 class="text-4xl font-bold mb-4 items-center">プロフィール</h1>
+    </div>
+    <!-- タイムラインの全体 -->
     <ul class="timeline timeline-vertical">
+        <!-- 行エリア -->
         <li>
+            <!-- タイムラインの先頭 イベント年を記載 -->
+            <div class="timeline-start">1998</div>
+            <!-- タイムラインの中央アイコンおよびデザイン部分 -->
+            <div class="timeline-middle">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="h-5 w-5"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <!-- タイムライン部 経歴詳細の記述部分 -->
+            <div class="timeline-end timeline-box">
+                <!-- 経歴詳細(preタグで複数行に記述) -->
+                <pre
+                    class="whitespace-pre-line">
+                三重県にて生まれる
+                幼少期はWindows 95~XPのマシンをおもちゃにしていた
+                </pre>
+            </div>
+            <!-- タイムライン(アイコン部分)の区切り -->
+            <hr /> 
+        </li>
+        <!-- タイムラインの区切り -->
+        <li>
+            <hr />
+            <div class="timeline-start">2017-2021</div>
+            <div class="timeline-middle">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="h-5 w-5"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+
+            <div class="timeline-end timeline-box">
+                <pre
+                    class="whitespace-pre-line">
+                皇學館大学 文学部 神道学科 卒業
+                主に神道の歴史や文化・神社祭式を学ぶ
+                </pre>
+            </div>
+            <hr />
+        </li>
+        <li>
+            <hr />
+            <div class="timeline-start">2021-2024</div>
             <div class="timeline-middle">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -24,12 +87,16 @@ import Background from "../components/Background.astro";
                 </svg>
             </div>
             <div class="timeline-end timeline-box">
-                First Macintosh computer
+                <pre class="whitespace-pre-line">
+                    機電系企業にて組込ソフトウェアエンジニアとして勤務
+                    主にIoT機器のファームウェア開発および基板ソフトウェア開発に従事
+                </pre>
             </div>
             <hr />
         </li>
         <li>
             <hr />
+            <div class="timeline-start">2024-現在</div>
             <div class="timeline-middle">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -43,61 +110,14 @@ import Background from "../components/Background.astro";
                         clip-rule="evenodd"></path>
                 </svg>
             </div>
-            <div class="timeline-end timeline-box">iMac</div>
-            <hr />
-        </li>
-        <li>
-            <hr />
-            <div class="timeline-middle">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="h-5 w-5"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clip-rule="evenodd"></path>
-                </svg>
+            <div class="timeline-end timeline-box">
+                <pre class="whitespace-pre-line">
+                商社にて社内SEとして勤務
+                主に社内システムの運用・保守およびインフラの管理・運用に従事
+                社内システムの改善や新規システムの導入プロジェクトに参加
+                </pre>
             </div>
-            <div class="timeline-end timeline-box">iPod</div>
-            <hr />
-        </li>
-        <li>
-            <hr />
-            <div class="timeline-middle">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="h-5 w-5"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </div>
-            <div class="timeline-end timeline-box">iPhone</div>
-            <hr />
-        </li>
-        <li>
-            <hr />
-            <div class="timeline-middle">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="h-5 w-5"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </div>
-            <div class="timeline-end timeline-box">Apple Watch</div>
+            
         </li>
     </ul>
 </Layout>
