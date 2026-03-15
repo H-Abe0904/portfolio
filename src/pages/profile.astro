@@ -9,7 +9,7 @@ import Background from "../components/Background.astro";
     <Header />
 
     <div class="flex flex-col items-center justify-center h-50">
-        <h1 class="text-4xl font-bold mb-4 items-center">プロフィール</h1>
+        <h1 class="text-4xl font-bold mb-4 items-start">プロフィール</h1>
     </div>
     <!-- タイムラインの全体 -->
     <ul class="timeline timeline-vertical">
@@ -21,7 +21,7 @@ import Background from "../components/Background.astro";
                 
             </div>
             <!-- タイムラインの中央アイコンおよびデザイン部分 -->
-            <div class="timeline-middle">
+            <div class="timeline-middle timeline-icon">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -35,10 +35,10 @@ import Background from "../components/Background.astro";
                 </svg>
             </div>
             <!-- タイムライン部 経歴詳細の記述部分 -->
-            <div class="timeline-end timeline-box">
+            <div class="timeline-end timeline-box h-auto">
                 <!-- 経歴詳細(preタグで複数行に記述) -->
                 <pre
-                    class="whitespace-pre-line">
+                    class="whitespace-pre-line fontsize-50">
                 三重県にて生まれる
                 幼少期はWindows 95~XPのマシンをおもちゃにしていた
                 </pre>
