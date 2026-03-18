@@ -8,16 +8,16 @@ import Background from "../components/Background.astro";
     {/* 💡 必ず Layout の「中」に Header を入れる */}
     <Header />
 
-    <div class="flex flex-col items-center justify-center h-50">
+    <div class="flex flex-col items-center justify-center h-35">
         <h1 class="text-4xl font-bold mb-4 items-start">プロフィール</h1>
     </div>
     <!-- タイムラインの全体 -->
-    <ul class="timeline timeline-vertical">
+    <ul class="timeline timeline-vertical timeline-start w-full">
         <!-- 行エリア -->
-        <li>
+        <li class="timeline-item w-full" >
             <!-- タイムラインの先頭 イベント年を記載 -->
-            <div class="timeline-start">
-                <p>1998</p>
+            <div class="timeline-start ">
+                <p >1998</p>
                 
             </div>
             <!-- タイムラインの中央アイコンおよびデザイン部分 -->
