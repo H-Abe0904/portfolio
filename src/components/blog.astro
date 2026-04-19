@@ -1,0 +1,30 @@
+---
+// src/components/BlogCard.astro
+const { title, description, id, pubDate, category = "Tech" } = Astro.props;
+---
+
+<div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all border border-base-200 group">
+  <div class="card-body">
+    <div class="flex justify-between items-start">
+      <div class="badge badge-primary badge-outline text-xs">{category}</div>
+      {pubDate && <time class="text-xs opacity-50">{pubDate.toLocaleDateString()}</time>}
+    </div>
+    
+    <h2 class="card-title mt-2 group-hover:text-primary transition-colors">
+      <a href={`/blog/${id}`}>{title}</a>
+    </h2>
+    
+    <p class="text-sm text-base-content/70 line-clamp-2 my-2">
+      {description}
+    </p>
+    
+    <div class="card-actions justify-end mt-4">
+      <a href={`/blog/${id}`} class="btn btn-ghost btn-sm group-hover:btn-primary transition-all">
+        Read More
+        <svg xmlns="http://w3.org" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

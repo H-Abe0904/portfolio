@@ -1,0 +1,56 @@
+---
+// src/pages/blog/[...id].astro
+import { getCollection, render } from 'astro:content'; // renderをインポート
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { id: post.id }, // slug ではなく id
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+// render(post) を使って本文を変換する (最新の書き方)
+const { Content } = await render(post); 
+---
+
+
+<Layout title={post.data.title}>
+     <Header />
+ <div class="max-w-3xl mx-auto py-10 px-4">
+    <!-- パンくずリスト -->
+    <div class="text-sm breadcrumbs mb-8">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li>{post.data.title}</li>
+      </ul>
+    </div>
+
+    <article>
+      <header class="mb-10 text-center">
+        <h1 class="text-5xl font-extrabold mb-4 leading-tight">{post.data.title}</h1>
+        <div class="divider"></div> 
+        <time class="italic opacity-60">{post.data.pubDate?.toLocaleDateString()}</time>
+      </header>
+
+      <!-- 本文。Tailwind TypographyのproseとdaisyUIは共存可能 -->
+      <div class="prose prose-lg max-w-none">
+        <Content />
+      </div>
+    </article>
+  </div>
+</Layout>
+
+<style is:global>
+  /* 記事内の画像すべてに角丸と影をつける */
+  .prose img {
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
