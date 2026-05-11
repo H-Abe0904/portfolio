@@ -7,6 +7,8 @@ const blog = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
+    tags: z.array(z.string()), // タグは文字列の配列
+    thumbnail: z.string().optional(),     // 画像のパス
     pubDate: z.date(),
     cover: image().optional(), // カバー画像を追加（任意）
   }),

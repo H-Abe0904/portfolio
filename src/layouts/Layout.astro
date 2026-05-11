@@ -2,11 +2,24 @@
 import "../styles/global.css";
 
 const { pageTitle } = Astro.props;
+import.meta.env.GAID;
+const GA_ID = import.meta.env.GAID;
 ---
 
 <!doctype html>
 <html lang="ja">
     <head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+        
+        <script is:inline define:vars={{ GA_ID }}>
+          // 型定義（スクリプト内でのエラー回避）
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', GA_ID);
+        </script>
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -15,21 +28,31 @@ const { pageTitle } = Astro.props;
     </head>
     <body>
         <header>
-			<!-- ナビゲーションバー部分(高さ調整のためコメントアウト) -->
-             <!-- <div class="navbar bg-base-100 shadow-sm min-h-[3rem] py-0"> -->
-                 </div>
+            {/* ナビゲーションバーの閉じタグのズレを修正 */}
+            <div class="navbar bg-base-100 shadow-sm min-h-[3rem] py-0">
+            </div>
         </header>
 
         <main>
-            <slot /> </main>
+            <slot />
+        </main>
     </body>
 </html>
 
+<script>
+  // TypeScript の型エラーを根本から解決する場合
+  declare global {
+    interface Window {
+      dataLayer: any[];
+    }
+  }
+</script>
+
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>

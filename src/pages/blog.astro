@@ -15,6 +15,7 @@ const posts = await getCollection("blog");
       {posts.map((post) => (
         <Blog
           id={post.id}
+          thumbnail={post.data.thumbnail}
           title={post.data.title}
           description={post.data.description}
           pubDate={post.data.pubDate}
